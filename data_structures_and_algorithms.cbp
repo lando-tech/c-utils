@@ -31,15 +31,27 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="dynamic_array.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="dynamic_array.h" />
-		<Unit filename="linked_list.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="linked_list.h" />
+		<Unit filename="include/data_types.h" />
+		<Unit filename="include/dynamic_array.h" />
+		<Unit filename="include/file_reader.h" />
+		<Unit filename="include/linked_list.h" />
+		<Unit filename="include/vector.h" />
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/data_types.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/dynamic_array.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/file_reader.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/linked_list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/vector.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

@@ -15,3 +15,54 @@
 
 1741938793 c:\users\aaron\github\data_structures_and_algorithms\linked_list.h
 
+1741953681 source:c:\users\aaron\github\data_structures_and_algorithms\main.c
+	<stdio.h>
+	<stdlib.h>
+	"include/dynamic_array.h"
+	"include/vector.h"
+
+1741938839 c:\users\aaron\github\data_structures_and_algorithms\include\dynamic_array.h
+
+1741939858 source:c:\users\aaron\github\data_structures_and_algorithms\src\dynamic_array.c
+	<stdint.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"../include/dynamic_array.h"
+
+1741939891 source:c:\users\aaron\github\data_structures_and_algorithms\src\linked_list.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/linked_list.h"
+
+1741938793 c:\users\aaron\github\data_structures_and_algorithms\include\linked_list.h
+
+1741950833 source:c:\users\aaron\github\data_structures_and_algorithms\src\data_types.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<limits.h>
+	<stdbool.h>
+	"../include/data_types.h"
+
+1741950787 c:\users\aaron\github\data_structures_and_algorithms\include\data_types.h
+
+1741950956 source:c:\users\aaron\github\data_structures_and_algorithms\src\file_reader.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	<limits.h>
+	"../include/file_reader.h"
+
+1741950915 c:\users\aaron\github\data_structures_and_algorithms\include\file_reader.h
+
+1741952363 source:c:\users\aaron\github\data_structures_and_algorithms\src\vector.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdint.h>
+	"../include/vector.h"
+
+1741954682 c:\users\aaron\github\data_structures_and_algorithms\include\vector.h
+
