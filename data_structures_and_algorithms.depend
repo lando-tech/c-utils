@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1741938740 source:c:\users\aaron\github\data_structures_and_algorithms\dynamic_array.c
+	<stdint.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"dynamic_array.h"
+
+1741938839 c:\users\aaron\github\data_structures_and_algorithms\dynamic_array.h
+
+1741938811 source:c:\users\aaron\github\data_structures_and_algorithms\linked_list.c
+	<stdio.h>
+	<stdlib.h>
+	"linked_list.h"
+
+1741938793 c:\users\aaron\github\data_structures_and_algorithms\linked_list.h
+
