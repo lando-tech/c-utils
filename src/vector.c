@@ -37,3 +37,5 @@ Vector* vector(DataTypes dtype)
     }
     return vec;
 }
+
+void vec_append(Vector *vector, void **data);

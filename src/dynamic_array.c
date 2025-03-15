@@ -68,7 +68,7 @@ void pop(StringArray *arr)
 void print_array(StringArray *arr)
 {
     int i;
-    printf("\nArray size: %d\n", arr->size);
+    printf("\nArray size: %lu\n", arr->size);
     for ( i = 0; i < arr->size; ++i )
     {
         printf(" %s", arr->data[i]);

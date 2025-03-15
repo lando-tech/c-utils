@@ -21,5 +21,6 @@ typedef struct
 } Vector;
 
 Vector* vector(DataTypes dtype);
+void vec_append(Vector *vector, void **data);
 
 #endif // VECTOR_H

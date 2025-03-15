@@ -6,12 +6,16 @@
 	<string.h>
 	"dynamic_array.h"
 
+1741938740 rray.h"
+
 1741938839 c:\users\aaron\github\data_structures_and_algorithms\dynamic_array.h
 
 1741938811 source:c:\users\aaron\github\data_structures_and_algorithms\linked_list.c
 	<stdio.h>
 	<stdlib.h>
 	"linked_list.h"
+
+1741938811 st.h"
 
 1741938793 c:\users\aaron\github\data_structures_and_algorithms\linked_list.h
 
@@ -20,6 +24,8 @@
 	<stdlib.h>
 	"include/dynamic_array.h"
 	"include/vector.h"
+
+1741953681 ector.h"
 
 1741938839 c:\users\aaron\github\data_structures_and_algorithms\include\dynamic_array.h
 
@@ -30,10 +36,14 @@
 	<string.h>
 	"../include/dynamic_array.h"
 
+1741939858 e/dynamic_array.h"
+
 1741939891 source:c:\users\aaron\github\data_structures_and_algorithms\src\linked_list.c
 	<stdio.h>
 	<stdlib.h>
 	"../include/linked_list.h"
+
+1741939891 e/linked_list.h"
 
 1741938793 c:\users\aaron\github\data_structures_and_algorithms\include\linked_list.h
 
@@ -45,6 +55,8 @@
 	<stdbool.h>
 	"../include/data_types.h"
 
+1741950833 e/data_types.h"
+
 1741950787 c:\users\aaron\github\data_structures_and_algorithms\include\data_types.h
 
 1741950956 source:c:\users\aaron\github\data_structures_and_algorithms\src\file_reader.c
@@ -55,6 +67,8 @@
 	<limits.h>
 	"../include/file_reader.h"
 
+1741950956 e/file_reader.h"
+
 1741950915 c:\users\aaron\github\data_structures_and_algorithms\include\file_reader.h
 
 1741952363 source:c:\users\aaron\github\data_structures_and_algorithms\src\vector.c
@@ -64,5 +78,57 @@
 	<stdint.h>
 	"../include/vector.h"
 
+1741952363 e/vector.h"
+
 1741954682 c:\users\aaron\github\data_structures_and_algorithms\include\vector.h
+
+1742028115 source:/home/landotech/github/data_structures_and_algorithms/main.c
+	<stdio.h>
+	<stdlib.h>
+	"include/dynamic_array.h"
+
+1742027840 /home/landotech/github/data_structures_and_algorithms/include/dynamic_array.h
+
+1742027840 /home/landotech/github/data_structures_and_algorithms/include/vector.h
+
+1742027840 source:/home/landotech/github/data_structures_and_algorithms/src/data_types.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<limits.h>
+	<stdbool.h>
+	"../include/data_types.h"
+
+1742027840 /home/landotech/github/data_structures_and_algorithms/include/data_types.h
+
+1742027840 source:/home/landotech/github/data_structures_and_algorithms/src/file_reader.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	<limits.h>
+	"../include/file_reader.h"
+
+1742027840 /home/landotech/github/data_structures_and_algorithms/include/file_reader.h
+
+1742027840 source:/home/landotech/github/data_structures_and_algorithms/src/linked_list.c
+	<stdio.h>
+	<stdlib.h>
+	"../include/linked_list.h"
+
+1742027840 /home/landotech/github/data_structures_and_algorithms/include/linked_list.h
+
+1742027840 source:/home/landotech/github/data_structures_and_algorithms/src/vector.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdint.h>
+	"../include/vector.h"
+
+1742027921 source:/home/landotech/github/data_structures_and_algorithms/src/dynamic_array.c
+	<stdint.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"../include/dynamic_array.h"
 
