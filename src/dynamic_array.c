@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "../include/dynamic_array.h"
+#include "dynamic_array.h"
 
+// TODO Convert to Vector with data type *void
 
 /*
  * Dynamic array for strings, can be easily altered to fit

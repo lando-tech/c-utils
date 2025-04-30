@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <limits.h>
 #include <stdbool.h>
-#include "../include/data_types.h"
+#include "data_types.h"
 
 /* This function prints the primitive data type limits in C.
  * Each data type has a specific range. Note that each data
