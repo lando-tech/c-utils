@@ -14,10 +14,30 @@ void vector_test(int size, int_vector_t *vec)
   }
 }
 
+void pretty_print_vec(int_vector_t *vec)
+{
+  printf("[");
+  for (int i = 0; i < vec->size; ++i)
+  {
+    if ( i == vec->size - 1 )
+    {
+      printf("%d", vec->data[i]);
+    }
+    else
+    {
+      printf("%d, ", vec->data[i]);
+    }
+  }
+  printf("]\n");
+}
+
 int main()
 {
   int_vector_t vec;
   int_vector_init(&vec);
-  vector_test(12, &vec);
+  vector_test(20, &vec);
+  pretty_print_vec(&vec);
+  int_vector_pop(&vec);
+  pretty_print_vec(&vec);
   return 0;
 }

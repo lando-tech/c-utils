@@ -42,23 +42,48 @@ static inline void FUNC(_push)(FUNC(_t) *vec, VEC_TYPE element)
         {
             vec->data = temp;
             vec->data[vec->size] = element;
-            printf("Index: %zu\n", vec->size);
+            // printf("Index: %zu\n", vec->size);
             vec->size++;
-            printf("Memory reallocated, and new item appended to vector.\n");
+            // printf("Memory reallocated, and new item appended to vector.\n");
         }
         else
         {
             printf("Unable to reallocate memory!\n");
-            free(vec->data);
             return;
         }
     }
     else if ( vec->size < vec->capacity )
     {
-        vec->data[vec->size - 1] = element;
-        printf("Index: %zu\n", vec->size);
+        vec->data[vec->size] = element;
+        // printf("Index: %zu\n", vec->size);
         vec->size++;
-        printf("No reallocation needed. Item appended to vector.\n");
+        // printf("No reallocation needed. Item appended to vector.\n");
+    }
+}
+
+static inline void FUNC(_pop)(FUNC(_t) *vec)
+{
+    if ( vec->size == 0 )
+    {
+        printf("Vector has no elements to remove!\n");
+        return;
+    }
+    vec->size--;
+
+    if ( vec->size < vec->capacity / 4 && vec->capacity > 10 )
+    {
+        vec->capacity /= 2;
+        VEC_TYPE *new_data = realloc(vec->data, sizeof(VEC_TYPE) * vec->capacity);
+
+        if ( new_data )
+        {
+            vec->data = new_data;
+        }
+        else
+        {
+            printf("Failed to resize vector during removal!\n");
+            return;
+        }
     }
 }
 
