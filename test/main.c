@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include <stdio.h>
 
 #define VEC_TYPE int
@@ -6,11 +7,12 @@
 
 void vector_test(int size, int_vector_t *vec)
 {
-  int elem = 2;
+  int elem = 1;
   for ( int i = 0; i < size; ++i )
   {
     int_vector_push(vec, elem);
-    elem *= 2;
+    // printf("Element %d added to vector\n", elem);
+    elem++;
   }
 }
 
@@ -35,9 +37,10 @@ int main()
 {
   int_vector_t vec;
   int_vector_init(&vec);
-  vector_test(20, &vec);
-  pretty_print_vec(&vec);
+  vector_test(10, &vec);
+  // size_t index = 3;
+  // printf("Data at index: %d = %d\n", 3, int_vector_get(&vec, index));
   int_vector_pop(&vec);
-  pretty_print_vec(&vec);
+  int_vector_free(&vec);
   return 0;
 }

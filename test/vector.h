@@ -87,4 +87,19 @@ static inline void FUNC(_pop)(FUNC(_t) *vec)
     }
 }
 
+static inline VEC_TYPE FUNC(_get)(FUNC(_t) *vec, size_t index)
+{
+    if ( index > vec->size )
+    {
+        printf("Index out of bounds!\n");
+        return -1;
+    }
+    return vec->data[index];
+}
+
+static inline void FUNC(_free)(FUNC(_t) *vec)
+{
+    free(vec->data);
+}
+
 #endif
