@@ -1,4 +1,6 @@
-
+#include <stdio.h>
+#include <stdlib.h>
+#include "file_io.h"
 
 void read_file(char* fpath) 
 {

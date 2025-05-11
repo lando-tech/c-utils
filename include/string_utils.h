@@ -16,6 +16,7 @@ typedef struct
 StringArray* create_array(size_t capacity);
 void free_array(StringArray *arr);
 void append(StringArray *arr, char *element);
+void pop(StringArray *arr);
 void print_array(StringArray *arr);
 
 

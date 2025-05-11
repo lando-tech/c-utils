@@ -31,7 +31,7 @@ void append(StringArray *arr, char *element)
         }
         else
         {
-            perror("Unable to reallocate memory!\n");
+            printf("Unable to reallocate memory!\n");
             free(new_elem);
             return;
         }
@@ -59,20 +59,30 @@ void pop(StringArray *arr)
         char **new_data = realloc(arr->data, sizeof(char *) * arr->capacity);
 
         if ( new_data ) arr->data = new_data;
+        else printf("Failed to resize String Array!\n"); return;
     }
 }
 
 void print_array(StringArray *arr)
 {
     int i;
-    printf("\nArray size: %lu\n", arr->size);
+    printf("\n");
+    printf("Array size    : %lu\n", arr->size);
+    printf("Array capacity: %lu\n", arr->capacity);
     printf("[");
     for ( i = 0; i < arr->size; ++i )
     {
-        printf("%s, ", arr->data[i]);
+        if ( i == arr->size - 1 )
+        {
+            printf("%s", arr->data[i]);
+        }
+        else
+        {
+            printf("%s, ", arr->data[i]);
+        }
     }
     printf("]");
-    printf("\n");
+    printf("\n\n");
 }
 
 void free_array(StringArray *arr)
