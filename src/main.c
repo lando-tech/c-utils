@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "string_utils.h"
 
 #define VEC_TYPE int
 #define VEC_PREFIX int_vector
+#include "data_types.h"
 #include "vector.h"
 
 void print_int_vec(int_vector_t* vec)
