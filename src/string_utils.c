@@ -6,7 +6,7 @@
 #include "string_utils.h"
 
 
-StringArray* create_array(size_t capacity)
+StringArray* str_array_init(size_t capacity)
 {
     if (capacity == 0) capacity = 1;
     StringArray *arr = malloc(sizeof(StringArray));
@@ -16,7 +16,7 @@ StringArray* create_array(size_t capacity)
     return arr;
 }
 
-void append(StringArray *arr, char *element)
+void str_array_append(StringArray *arr, char *element)
 {
     char *new_elem = strdup(element);
     if ( arr->size == arr->capacity )
@@ -43,7 +43,7 @@ void append(StringArray *arr, char *element)
     }
 }
 
-void pop(StringArray *arr)
+void str_array_pop(StringArray *arr)
 {
     if ( arr->size == 0 )
     {
@@ -63,7 +63,7 @@ void pop(StringArray *arr)
     }
 }
 
-void print_array(StringArray *arr)
+void str_array_print(StringArray *arr)
 {
     int i;
     printf("\n");
@@ -85,7 +85,7 @@ void print_array(StringArray *arr)
     printf("\n\n");
 }
 
-void free_array(StringArray *arr)
+void str_array_free(StringArray *arr)
 {
     for ( size_t i = 0; i < arr->size; ++i )
     {

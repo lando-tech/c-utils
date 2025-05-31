@@ -13,11 +13,11 @@ typedef struct
     size_t capacity;
 } StringArray;
 
-StringArray* create_array(size_t capacity);
-void free_array(StringArray *arr);
-void append(StringArray *arr, char *element);
-void pop(StringArray *arr);
-void print_array(StringArray *arr);
+StringArray* str_array_init(size_t capacity);
+void str_array_free(StringArray *arr);
+void str_array_append(StringArray *arr, char *element);
+void str_array_pop(StringArray *arr);
+void str_array_print(StringArray *arr);
 
 
 int get_token_index(const char *str, const char dilim);

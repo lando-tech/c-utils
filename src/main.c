@@ -30,14 +30,14 @@ void print_int_vec(int_vector_t* vec)
 
 int main()
 {
-    StringArray *string_arr = create_array(10);
-    append(string_arr, "hello");
-    append(string_arr, "world");
-    append(string_arr, "people");
-    print_array(string_arr);
+    StringArray *string_arr = str_array_init(10);
+    str_array_append(string_arr, "hello");
+    str_array_append(string_arr, "world");
+    str_array_append(string_arr, "people");
+    str_array_print(string_arr);
 
-    pop(string_arr);
-    print_array(string_arr);
+    str_array_pop(string_arr);
+    str_array_print(string_arr);
 
     int_vector_t int_vec;
     int_vector_init(&int_vec);
@@ -50,6 +50,6 @@ int main()
     print_int_vec(&int_vec);
 
     int_vector_free(&int_vec);
-    free_array(string_arr);
+    str_array_free(string_arr);
     return 0;
 }
