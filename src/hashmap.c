@@ -35,8 +35,6 @@ HashMap* init_hashmap()
 
 /*
  * Add a new entry to the HashMap, using simple chaining
- * The caller will be responsible for freeing the Node.
- * See node.c for Node freeing.
  */
 int add_entry(HashMap* map, uint8_t key, int data)
 {
@@ -45,6 +43,7 @@ int add_entry(HashMap* map, uint8_t key, int data)
 
     // Set initial 'current' entry_bucket
     HashEntry* current = map->entry_buckets[index];
+    // Initialize a previous bucket to copy current
     HashEntry* previous = NULL;
     
     /*
@@ -56,6 +55,7 @@ int add_entry(HashMap* map, uint8_t key, int data)
     if (current == NULL) // Bucket is empty, add new_entry here
     {
         HashEntry *new_entry = malloc(sizeof(HashEntry));
+        // Malloc failure, return with -1
         if (new_entry == NULL)
         {
             printf("Failed to allocate memory for HashEntry!\n");
@@ -71,6 +71,7 @@ int add_entry(HashMap* map, uint8_t key, int data)
         return 0;
     }
     
+    // Current bucket has data inside, so we traverse the bucket
     while (current != NULL)
     {
         // Key already exists, return error
@@ -93,6 +94,7 @@ int add_entry(HashMap* map, uint8_t key, int data)
 
         // Copy current FIRST then go to the next node
         previous = current;
+        // Advance to the next entry and check for NULL
         current = current->next;
     }
     
@@ -104,8 +106,11 @@ int add_entry(HashMap* map, uint8_t key, int data)
     }
     new_entry->key = key;
     new_entry->data = data;
+    // This is the tail entry in the bucket, so next should be NULL
     new_entry->next = NULL;
-    previous->next = new_entry; // **Append the new_entry
+    // Previous is now the last NON NULL entry in the bucket
+    previous->next = new_entry; // **Append the new_entry (simple chaining)
+    // Increment length
     ++map->length;
     return 0;
 }

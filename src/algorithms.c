@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "algorithms.h"
 
+/*
+ * Simple implementation of bubble sort
+ */
 void bubble_sort(int arr[], int size)
 {
     int temp;
@@ -17,3 +20,7 @@ void bubble_sort(int arr[], int size)
         }
     }
 }
+
+/*
+ * Merge sort
+ */

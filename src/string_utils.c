@@ -5,12 +5,19 @@
 
 #include "string_utils.h"
 
-
+// TODO utilize INITIAL_CAPACITY constant from string_utils.h
 StringArray* str_array_init(size_t capacity)
 {
-    if (capacity == 0) capacity = 1;
+    // Ensure capacity is set in case the caller passes in 0
+    if (capacity == 0) capacity = 24; // Resizing is expensive, so a larger buffer is used
     StringArray *arr = malloc(sizeof(StringArray));
     arr->data = malloc(sizeof(char *) * capacity);
+    if (arr->data == NULL)
+    {
+        printf("Failed to initialize StringArray!\n");
+        return -1;
+    }
+    // Array is empty, size = 0
     arr->size = 0;
     arr->capacity = capacity;
     return arr;
@@ -19,6 +26,7 @@ StringArray* str_array_init(size_t capacity)
 void str_array_append(StringArray *arr, char *element)
 {
     char *new_elem = strdup(element);
+    // Size has reached capacity, resize the array
     if ( arr->size == arr->capacity )
     {
         arr->capacity *= 2;
@@ -47,7 +55,7 @@ void str_array_pop(StringArray *arr)
 {
     if ( arr->size == 0 )
     {
-        perror("Array has no elements to remove");
+        printf("Array has no elements to remove!\n");
         return;
     }
     free(arr->data[arr->size - 1]);
@@ -113,6 +121,7 @@ void strip(char *str, char dilim)
  * Split the string with '\0'
  * and return the index position of the '\0'
  */
+// TODO Implement complementary function to return a StringArray based on index
 int in_place_split(char *str, char dilim)
 {
     int len = strlen(str);

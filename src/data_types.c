@@ -5,12 +5,10 @@
 #include <stdbool.h>
 #include "data_types.h"
 
-/* This function prints the primitive data type limits in C.
+/* Prints the primitive data type limits in C.
  * Each data type has a specific range. Note that each data
  * type can be either signed (- or +) or unsigned.
  */
-
-
 void print_limits()
 {
     printf("\n C data type limits:\n\n");
@@ -31,7 +29,7 @@ void print_limits()
 }
 
 /*
- * This function prints the format specifiers for each data type
+ * Prints the format specifiers for each data type
  * It is useful as a lookup table
  */
 
@@ -55,6 +53,10 @@ void print_format_specifiers()
     printf("\tHexadecimal:           %%x or %%X\n\n");
 }
 
+/*
+ * Prints the alphabet, optionally in ASCII format as a 
+ * reference guide.
+ */
 void print_alphabet(bool ascii)
 {
     char alpha[26];
@@ -86,6 +88,11 @@ void print_alphabet(bool ascii)
     }
 }
 
+
+/*
+ * This function prints the ASCII table in a readable format as
+ * a quick reference guide.
+ */
 void print_ascii_table()
 {
     char ascii_table[95];
@@ -118,6 +125,9 @@ void print_ascii_table()
     printf("\n\n");
 }
 
+/*
+ * Prints the escape characters as a quick reference guide.
+ */
 void print_escape_chars()
 {
     printf(" Escape Characters:\n\n");

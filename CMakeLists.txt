@@ -16,11 +16,6 @@ add_library(c_utils_lib STATIC
     src/data_types.c
     src/file_io.c
     src/string_utils.c
-    include/algorithms.h
-    include/data_types.h
-    include/file_io.h
-    include/string_utils.h
-    include/vector.h
 )
 target_include_directories(c_utils_lib PUBLIC include)
 target_compile_features(c_utils_lib PUBLIC c_std_11)
