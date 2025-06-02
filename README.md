@@ -1,39 +1,79 @@
 # c-utils
-- This library consists of basic implementations of some useful data structures/containers, algorithms, and utilities.
-- The goal of this library is educational in nature, but also intended to be used in my own workflows and anyone else who finds it useful.
-- The design structure is intended to keep each header and src file pair as independet as possible to ensure usage of only needed libs per project.
 
-## HashMap
-- The current iteration of `hashmap.h/c` is currently under development, but is semi-functional (See ***Upcoming HashMap Features*** below).
-- The hashmap is currently fixed in size, but resizing is my next project pertaining to this lib.
-- It also currently includes `uint_8` data types as the key, a design choice carried
-  over from another project. This will be changed in the near future.
+**c-utils** is a collection of basic, standalone implementations of common data structures, algorithms, and utility functions in C.
+Designed primarily for educational purposes, the library emphasizes modularity — each header/source pair is kept as independent as possible to minimize dependencies and allow selective usage.
 
-### Upcoming HashMap Features
-- get/insert operations
-- `int` based keys
-- dynamic resizing/allocation
+## Features
 
-## Vector
-- `vector.h` is a header only implementation of a vector.
-- Since vectors are relatively simple in nature, I decided to add some "macro magic" to experiment.
-- You will find the usual elements of a dynamic array structure:
-    - `push`
-    - `pop`
-    - `get`
-- In the future I plan to implement a more robust version with a src and header file.
+### HashMap
 
-## String Utils
-- `string_utils` contains several useful string parsing functions and a custom `StringArray` (dynamic string array implement).
+The `hashmap` implementation is a work-in-progress. It currently supports fixed-size storage and uses `uint8_t` keys — a temporary design inherited from a prior project.
 
-## File-I/O
-- `file_io` currently only contains a `read_file` function that simply prints file contents to `stdout`. I plan to do a lot more with this library in the future.
+#### Planned Features
 
-## Algorithms
-- `algorithms` currently only implements a simple bubble sort on an integer array.
-- My next goal is to add `merge sort`, `binary_search`, and `insertion sort`.
+* Key-value insertion and retrieval
+* Support for integer (`int`) keys
+* Dynamic resizing and memory allocation
 
-## Data Types
-- `data_types` is a very simple lib I created to aid me in learning C. It contains useful functions that will
-  print `c-limits`, a full `ASCII` table, and other helper functions.
-- This lib is a useful reference when first starting out in C, or when you just can't remember what the `ASCII` value of a `~` is.
+### Vector
+
+`vector.h` is a header-only implementation of a dynamic array (vector) in C. To simulate type-generic behavior, the implementation leverages macros.
+
+Current functionality includes:
+
+* `push`
+* `pop`
+* `get`
+
+### String Utilities
+
+`string_utils` provides common string parsing functions along with a custom `StringArray` — a dynamically sized array for managing strings.
+
+### File I/O
+
+`file_io` includes a `read_file` function that outputs file contents to `stdout`. Additional file manipulation utilities are planned for future development.
+
+### Algorithms
+
+The `algorithms` module implements a bubble sort for integer arrays.
+
+Planned additions:
+
+* Merge Sort
+* Binary Search
+* Insertion Sort
+
+### Data Types
+
+`data_types` provides utility functions for referencing C language limits, printing the full ASCII table, and other helpful features for beginners and quick reference.
+
+## Installation
+
+Clone the repository:
+
+```sh
+git clone https://github.com/yourname/c-utils.git
+```
+
+## Usage
+
+Include the desired module in your project:
+
+```c
+#include "vector.h"
+#include "hashmap.h"
+```
+
+Compile with your C compiler:
+
+```sh
+gcc your_file.c -o your_program
+```
+
+## License
+
+MIT License. See `LICENSE` file for details.
+
+## Contributing
+
+Contributions are welcome. Feel free to open issues or submit pull requests to help improve the project.
