@@ -11,11 +11,17 @@ StringArray* str_array_init(size_t capacity)
     // Ensure capacity is set in case the caller passes in 0
     if (capacity == 0) capacity = 24; // Resizing is expensive, so a larger buffer is used
     StringArray *arr = malloc(sizeof(StringArray));
+    if (arr == NULL)
+    {
+        printf("Failed to initialize StringArray!\n");
+        return NULL;
+    }
+
     arr->data = malloc(sizeof(char *) * capacity);
     if (arr->data == NULL)
     {
         printf("Failed to initialize StringArray!\n");
-        return -1;
+        return NULL;
     }
     // Array is empty, size = 0
     arr->size = 0;

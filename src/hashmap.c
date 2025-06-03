@@ -4,10 +4,10 @@
 #include <stdlib.h>
 
 /*
- * Initialize the HashMap
+ * Initialize HashMap
  */
 
-HashMap* init_hashmap()
+HashMap* hashmap_init()
 {
     HashMap* map = malloc(sizeof(HashMap));
     
@@ -36,21 +36,15 @@ HashMap* init_hashmap()
 /*
  * Add a new entry to the HashMap, using simple chaining
  */
-int add_entry(HashMap* map, uint8_t key, int data)
+int hm_add_entry(HashMap* map, int key, int data)
 {
     // hash current key and get the new index
-    uint32_t index = hash_index(key, map->capacity);
+    size_t index = hash_index(key, map->capacity);
 
     // Set initial 'current' entry_bucket
     HashEntry* current = map->entry_buckets[index];
     // Initialize a previous bucket to copy current
     HashEntry* previous = NULL;
-    
-    /*
-     * Allocate memory for new entry and check for
-     * failure. If it fails we return here
-     */
-
     
     if (current == NULL) // Bucket is empty, add new_entry here
     {
@@ -115,9 +109,42 @@ int add_entry(HashMap* map, uint8_t key, int data)
     return 0;
 }
 
-int destroy_hashmap(HashMap* map)
+// int hm_remove_entry(HashMap* map, int key)
+// {
+//     if (map->length <= 0)
+//     {
+//         printf("No items found in HashMap!\n");
+//         return -1;
+//     }
+
+//     size_t index = hash_index(key, map->capacity);
+//     HashEntry* target_entry = map->entry_buckets[index];
+//     HashEntry* next_entry = NULL;
+
+//     /*
+//      * If current entry is not NULL, and the key matches,
+//      * we walk through this bucket and shift the items
+//      * accordingly.
+//      */
+//     if (target_entry != NULL && target_entry->key == key)
+//     {
+//         next_entry = target_entry->next;
+//         // free(target_entry);
+//         // target_entry = NULL;
+
+//         while (next_entry != NULL)
+//         {
+//             target_entry = next_entry;
+//             next_entry = next_entry->next;
+//         }
+//         map->length--;
+//         return 0;
+//     }
+// }
+
+int hashmap_destroy(HashMap* map)
 {
-    for (uint32_t i = 0; i < map->capacity; ++i)
+    for (size_t i = 0; i < map->capacity; ++i)
     {
         HashEntry* temp = map->entry_buckets[i];
         while (temp != NULL)
@@ -135,7 +162,7 @@ int destroy_hashmap(HashMap* map)
     return 0;
 }
 
-uint32_t hash_index(uint8_t key, uint32_t capacity)
+size_t hash_index(int key, size_t capacity)
 {
     return key % capacity;
 }
