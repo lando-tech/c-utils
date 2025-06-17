@@ -12,7 +12,7 @@ void read_file(char* fpath)
     FILE* fptr = fopen(fpath, "r");
     if (fptr == NULL) 
     {
-        perror("Failed to open file!\n");
+        perror("fopen");
         return;
     }
     char buff[1024];

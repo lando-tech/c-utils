@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "string_utils.h"
+#include "algorithms.h"
 
 #define VEC_TYPE int
 #define VEC_PREFIX int_vector
@@ -59,6 +60,6 @@ void test_vector()
 
 int main()
 {
-    test_vector();
+    merge_sort_test();
     return 0;
 }
