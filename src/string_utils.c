@@ -77,6 +77,21 @@ void str_array_pop(StringArray *arr)
     }
 }
 
+void str_array_merge(StringArray *arr, size_t left, size_t mid, size_t right)
+{
+
+}
+
+void str_array_merge_sort(StringArray *arr, size_t left, size_t right)
+{
+
+}
+
+void str_array_sort(StringArray *arr)
+{
+    
+}
+
 void str_array_print(StringArray *arr)
 {
     int i;
