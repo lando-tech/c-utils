@@ -43,6 +43,26 @@ void test_str_array()
     str_array_free(string_arr);
 }
 
+void test_str_array_sort()
+{
+    StringArray *arr = str_array_init(10);
+
+    str_array_append(arr, "bravo");
+    str_array_append(arr, "zulu");
+    str_array_append(arr, "alpha");
+    str_array_append(arr, "echo");
+
+    printf("Array before sort:\n");
+    str_array_print(arr);
+
+    str_array_sort(arr);
+
+    printf("Array after sort:\n");
+    str_array_print(arr);
+
+    str_array_free(arr);
+}
+
 void test_vector()
 {
     int_vector_t int_vec;
@@ -60,6 +80,6 @@ void test_vector()
 
 int main()
 {
-    merge_sort_test();
+    test_str_array_sort();
     return 0;
 }

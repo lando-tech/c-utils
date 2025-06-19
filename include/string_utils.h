@@ -17,12 +17,15 @@ typedef struct
 
 StringArray* str_array_init(size_t capacity);
 void str_array_free(StringArray *arr);
+
 void str_array_append(StringArray *arr, char *element);
 char* str_array_get(StringArray *arr, size_t index);
-size_t str_array_len(StringArray *arr);
 void str_array_pop(StringArray *arr);
 void str_array_print(StringArray *arr);
 
+size_t str_array_len(StringArray *arr);
+
+void str_array_sort(StringArray *arr);
 
 int get_token_index(const char *str, const char dilim);
 void strip(char *str, char dilim);

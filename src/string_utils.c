@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
+#include <ctype.h>
 #include <stdio.h>
 
 #include "string_utils.h"
@@ -77,19 +78,81 @@ void str_array_pop(StringArray *arr)
     }
 }
 
-void str_array_merge(StringArray *arr, size_t left, size_t mid, size_t right)
+void str_array_merge(char** arr_data, size_t left, size_t mid, size_t right)
 {
+    size_t i, j, k;
 
+    size_t n1 = mid - left + 1;
+    size_t n2 = right - mid;
+
+    char** left_arr = (char **)malloc(sizeof(n1) * sizeof(char*));
+    char** right_arr = (char **)malloc(sizeof(n2) * sizeof(char*));
+
+    for (i = 0; i < n1; ++i) 
+    {
+        left_arr[i] = arr_data[left + i];
+    }
+    for (j = 0; j < n2; ++j)
+    {
+        right_arr[j] = arr_data[mid + 1 + j];
+    }
+
+    i = j = 0;
+    k = left;
+
+    while (i < n1 && j < n2)
+    {
+        if (tolower(left_arr[i][0] < tolower(right_arr[j][0])))
+        {
+            arr_data[k] = left_arr[i];
+            ++i;
+        }
+        else
+        {
+            arr_data[k] = right_arr[j];
+            ++j;
+        }
+        ++k;
+    }
+
+    while (i < n1)
+    {
+        arr_data[k] = left_arr[i];
+        ++i;
+        ++k;
+    }
+
+    while (j < n2)
+    {
+        arr_data[k] = right_arr[j];
+        ++j;
+        ++k;
+    }
+
+    free(left_arr);
+    free(right_arr);
 }
 
-void str_array_merge_sort(StringArray *arr, size_t left, size_t right)
+void str_array_merge_sort(char** arr_data, size_t left, size_t right)
 {
-
+    if (left < right)
+    {
+        size_t mid = left + (right - left) / 2;
+        str_array_merge_sort(arr_data, left, mid);
+        str_array_merge_sort(arr_data, mid + 1, right);
+        str_array_merge(arr_data, left, mid, right);
+    }
 }
 
 void str_array_sort(StringArray *arr)
 {
-    
+    size_t n = arr->size;
+    if (n <= 1)
+    {
+        printf("Array must have more than one item to sort!\n");
+        exit(1);
+    }
+    str_array_merge_sort(arr->data, 0, n - 1); 
 }
 
 void str_array_print(StringArray *arr)
