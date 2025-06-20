@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 #include "string_utils.h"
 
@@ -78,6 +79,18 @@ void str_array_pop(StringArray *arr)
     }
 }
 
+bool is_uppercase(char x)
+{
+    if (x > 64 && x < 91) return true; 
+    else return false;
+}
+
+/*
+ * Sort StringArray in alphabetical order, or if
+ * non alpha characters are present sort by ASCII value
+ *
+ */
+
 void str_array_merge(char** arr_data, size_t left, size_t mid, size_t right)
 {
     size_t i, j, k;
@@ -102,15 +115,33 @@ void str_array_merge(char** arr_data, size_t left, size_t mid, size_t right)
 
     while (i < n1 && j < n2)
     {
-        if (tolower(left_arr[i][0] < tolower(right_arr[j][0])))
+        char char_left = left_arr[i][0];
+        char char_right = right_arr[j][0]; 
+        if (isalpha(char_left) && isalpha(char_right))
         {
-            arr_data[k] = left_arr[i];
-            ++i;
+            if (tolower(char_left) < tolower(char_right))
+            {
+                arr_data[k] = left_arr[i];
+                ++i;
+            }
+            else
+            {
+                arr_data[k] = right_arr[j];
+                ++j;
+            }
         }
-        else
+        else 
         {
-            arr_data[k] = right_arr[j];
-            ++j;
+            if (char_left < char_right)
+            {
+                arr_data[k] = left_arr[i];
+                ++i;
+            }
+            else
+            {
+                arr_data[k] = right_arr[j];
+                ++j;
+            }
         }
         ++k;
     }
@@ -206,6 +237,7 @@ void strip(char *str, char dilim)
  * and return the index position of the '\0'
  */
 // TODO Implement complementary function to return a StringArray based on index
+
 int in_place_split(char *str, char dilim)
 {
     int len = strlen(str);

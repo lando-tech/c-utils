@@ -35,11 +35,10 @@ Current functionality includes:
 
 ### Algorithms
 
-The `algorithms` module implements a bubble sort for integer arrays.
+The `algorithms` module implements a bubble and merge sort for integer arrays.
 
 Planned additions:
 
-* Merge Sort
 * Binary Search
 * Insertion Sort
 
