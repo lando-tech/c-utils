@@ -115,8 +115,11 @@ void str_array_merge(char** arr_data, size_t left, size_t mid, size_t right)
 
     while (i < n1 && j < n2)
     {
+        // First character from each char array
         char char_left = left_arr[i][0];
         char char_right = right_arr[j][0]; 
+
+        // Is the current character alpha, sort alphabetically
         if (isalpha(char_left) && isalpha(char_right))
         {
             if (tolower(char_left) < tolower(char_right))

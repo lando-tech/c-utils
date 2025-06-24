@@ -59,10 +59,13 @@ void test_str_array_sort()
 {
     StringArray *arr = str_array_init(10);
 
+    str_array_append(arr, "mike");
     str_array_append(arr, "Bravo");
     str_array_append(arr, "zulu");
     str_array_append(arr, "alpha");
     str_array_append(arr, "Echo");
+    str_array_append(arr, "$3,122");
+    str_array_append(arr, "lima");
     str_array_append(arr, "charlie");
     str_array_append(arr, "eddie");
     str_array_append(arr, "test");
@@ -97,5 +100,6 @@ void test_vector()
 int main()
 {
     test_str_array_sort();
+    test_vector();
     return 0;
 }
